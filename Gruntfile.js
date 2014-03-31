@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     },
 
     requirejs: {
-      build: {
+      dist: {
         options: {
           optimize: 'uglify',
           baseUrl: 'app/src',
@@ -24,14 +24,34 @@ module.exports = function(grunt) {
           out: 'app/dist/app.js'
         }
       }
+    },
+
+    recess: {
+      lint: {
+        options: {
+          noUniversalSelectors: false
+        },
+        src: ['app/src/*.css']
+      },
+      dist: {
+        options: {
+          compile: true,
+          compress: true
+        },
+        files: {
+          'app/dist/app.css': ['app/src/*.css']
+        }
+      }
     }
+
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-recess');
 
-  grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('dist', ['jshint', 'requirejs']);
+  grunt.registerTask('default', ['jshint', 'recess:lint']);
+  grunt.registerTask('dist', ['jshint', 'requirejs:dist', 'recess:dist']);
 
 };
