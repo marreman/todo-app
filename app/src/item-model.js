@@ -1,31 +1,28 @@
 define(function () {
-    'use strict';
+  'use strict';
 
-    function ItemModel(snap) {
-        var _this = this;
+  function ItemModel(snap) {
+    this.id = snap.name();
+    this.data = snap.val();
+    this.ref = snap.ref();
 
-        this.id = snap.name();
-        this.data = snap.val();
-        this.ref = snap.ref();
+    $.observable(this);
+  }
 
-        $.observable(this);
-    }
+  ItemModel.prototype.save = function () {
+    this.ref.set(this.data);
+  };
 
-    ItemModel.prototype.save = function () {
-        this.ref.set(this.data);
-    };
+  ItemModel.prototype.update = function (newData) {
+    $.extend(this.data, newData);
+    this.trigger('changed');
+    return this;
+  };
 
-    ItemModel.prototype.update = function (newData) {
-        $.extend(this.data, newData);
-        this.trigger('changed');
-        return this;
-    };
+  ItemModel.prototype.remove = function () {
+    this.ref.remove();
+    this.trigger('removed');
+  };
 
-    ItemModel.prototype.remove = function () {
-        this.ref.remove();
-        this.trigger('removed');
-        delete this;
-    };
-
-    return ItemModel;
+  return ItemModel;
 });

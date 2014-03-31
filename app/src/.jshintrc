@@ -1,0 +1,21 @@
+{
+  "strict": true,
+  "quotmark": "single",
+  "camelcase": true,
+  "curly": true,
+  "eqnull": true,
+  "eqeqeq": true,
+  "undef": true,
+  "unused": true,
+  "trailing": true,
+  "globals": {
+    "window": true,
+    "setTimeout": true,
+    "define": true,
+    "$": true,
+    "Firebase": true,
+    "Hammer": true
+  },
+  "browser": true,
+  "smarttabs": true
+}

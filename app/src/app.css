@@ -38,7 +38,7 @@ body, input {
     color: #000;
 }
 
-#app {
+.app {
     margin: 0 auto;
     padding: 10px 8px;
 }
