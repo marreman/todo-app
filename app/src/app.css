@@ -1,98 +1,93 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color: #95a2b1;
+  color: #95a2b1;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #95a2b1;
+  color: #95a2b1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #95a2b1;
+  color: #95a2b1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #95a2b1;
-}
-
-[class*="tpl-"] {
-    display: none;
+  color: #95a2b1;
 }
 
 html {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
-    margin: 0;
-    background-color: #37434a;
-    overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #37434a;
 }
 
 body, input {
-    font-family: Helvetica Neue, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    color: #000;
+  font-family: Helvetica Neue, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  color: #000;
+  text-rendering: optimizeLegibility;
 }
 
 .app {
-    margin: 0 auto;
-    padding: 10px 8px;
+  padding: 10px 8px;
+  margin: 0 auto;
 }
 
 .new-item {
-    width: 100%;
-    font-size: 16px;
-    padding: 14px 15px;
-    box-shadow: none;
-    border-radius: 3px;
-    border: none;
-    outline: none;
-    margin: 0 0 10px;
+  width: 100%;
+  padding: 14px 15px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: none;
 }
 
 .item {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    padding: 14px 15px;
-    background-color: #fff;
-    border-bottom: 1px solid #E8EAEC;
-
+  display: block;
+  width: 100%;
+  padding: 14px 15px;
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom: 1px solid #E8EAEC;
 }
 
 .item:first-child {
-    border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
 }
 
 .item:last-child {
-    border: none;
-    border-radius: 0 0 3px 3px;
+  border: none;
+  border-radius: 0 0 3px 3px;
 }
 
 .item:first-child:last-child {
-    border-radius: 3px;
+  border-radius: 3px;
 }
 
 .item-done {
-    text-decoration: line-through;
-    color: #C7CCD3;
+  color: #C7CCD3;
+  text-decoration: line-through;
 }
 
 .item-checked-mark, .item-remove-mark {
-    display: none;
-    float: right;
-    font-size: 22px;
-    line-height: 16px;
+  display: none;
+  float: right;
+  font-size: 22px;
+  line-height: 16px;
 }
 
 .item-remove-mark {
-    color: white;
+  color: white;
 }
 
 .item-done .item-checked-mark {
-    display: block;
+  display: block;
 }
