@@ -10,11 +10,25 @@ module.exports = function(grunt) {
         reporter: require('jshint-stylish')
       },
       src: ['Gruntfile.js', 'app/src/**/*.js']
+    },
+
+    requirejs: {
+      build: {
+        options: {
+          baseUrl: 'app/src',
+          paths: {
+            'text': '../lib/require.text'
+          },
+          name: 'app',
+          out: 'app/dist/app.js'
+        }
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.registerTask('default', ['jshint']);
 
 };
