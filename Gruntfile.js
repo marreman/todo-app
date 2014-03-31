@@ -15,12 +15,13 @@ module.exports = function(grunt) {
     requirejs: {
       build: {
         options: {
+          optimize: 'uglify',
           baseUrl: 'app/src',
           paths: {
             'text': '../lib/require.text'
           },
           name: 'app',
-          out: 'app/dist/app.min.js'
+          out: 'app/dist/app.js'
         }
       }
     }

@@ -21,17 +21,15 @@
   <script src="lib/require.js"></script>
   <script>
     (function () {
-      var dev = window.location.hostname === 'localhost',
-        config = {
-            baseUrl: 'src',
-            paths: {
-                'text': '../lib/require.text'
-            }
-        },
-        main = dev ? 'app' : '../dist/app';
+      var dev = window.location.hostname === 'localhost';
 
-      require.config(config);
-      require([main]);
+      require.config({
+        baseUrl: dev ? 'src' : 'dist',
+        paths: {
+          'text': '../lib/require.text'
+        }
+      });
+      require(['app']);
     }());
   </script>
 </body>
