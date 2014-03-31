@@ -1,4 +1,4 @@
-app(function () {
+define(['item-list', 'item-view'], function (ItemList, ItemView) {
     'use strict';
 
     function genUUID() {
@@ -11,11 +11,8 @@ app(function () {
             return new Firebase(url).child(uuid);
         }()),
 
-        list = app.el.find('.list'),
-        input = app.el.find('input.new-item'),
-
-        ItemList = app.get('item-list'),
-        ItemView = app.get('item-view'),
+        list = $('.list'),
+        input = $('input.new-item'),
 
         itemList = new ItemList(fbRef);
 

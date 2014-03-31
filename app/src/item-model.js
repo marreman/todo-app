@@ -1,4 +1,4 @@
-app('item-model', function () {
+define(function () {
     'use strict';
 
     function ItemModel(snap) {

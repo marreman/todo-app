@@ -1,4 +1,5 @@
-app('item-view', function () {
+define(['text!item.tpl.html'], function (itemTpl) {
+
     'use strict';
 
     function ItemView(model) {
@@ -15,7 +16,7 @@ app('item-view', function () {
         });
     }
 
-    ItemView.prototype.tpl = app.tpl('item');
+    ItemView.prototype.tpl = itemTpl;
 
     ItemView.prototype.bindHandlers = function () {
         var _this = this,

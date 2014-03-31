@@ -1,7 +1,5 @@
-app('item-list', function () {
+define(['item-model'], function (ItemModel) {
     'use strict';
-
-    var ItemModel = app.get('item-model');
 
     function ItemList(fbRef) {
         var _this = this;
